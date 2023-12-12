@@ -1,0 +1,24 @@
+.readonly {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.readonly mat-card {
+    width: 100%;
+}
+
+.register {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.register mat-card {
+    width: 100%;
+}
+
+button {
+    margin-top: 1rem;
+}
