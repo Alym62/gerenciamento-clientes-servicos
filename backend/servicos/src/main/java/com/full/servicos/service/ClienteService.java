@@ -48,7 +48,6 @@ public class ClienteService {
     }
 
     public void deletar(Long id){
-        //clienteRepository.delete(findById(id));
         clienteRepository.findById(id).map(cliente -> {
             clienteRepository.delete(cliente);
             return Void.TYPE;

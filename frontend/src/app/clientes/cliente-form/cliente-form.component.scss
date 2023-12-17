@@ -1,24 +1,56 @@
 .readonly {
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .readonly mat-card {
-    width: 100%;
+  width: 100%;
 }
 
 .register {
-    width: 100%;
-    display: flex;
-    gap: 2rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
 }
 
 .register mat-card {
-    width: 100%;
+  width: 100%;
 }
 
 button {
-    margin-top: 1rem;
+  margin-top: 1rem;
+}
+
+.error-content {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.error-card {
+    width: 50%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-card .error {
+  border-left: 4px solid #d9534f;
+  border-left-color: #d9534f;
+  background-color: rgba(217, 83, 79, 0.1);
+  width: 50%;
+  text-align: center;
+  color: #d9534f;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

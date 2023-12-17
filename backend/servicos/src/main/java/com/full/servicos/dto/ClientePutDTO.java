@@ -1,6 +1,6 @@
 package com.full.servicos.dto;
 
-import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +15,6 @@ public class ClientePutDTO {
     private String nome;
 
     @CPF(message = "O CPF precisa ser válido.")
-    @Max(value = 11, message = "O CPF deve conter apenas 11 números.")
+    @Min(value = 11, message = "O CPF deve conter apenas 11 números.")
     private String cpf;
 }

@@ -14,10 +14,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {NgxMaskDirective, provideNgxMask} from 'ngx-mask'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ClientesListaComponent } from './clientes-lista/clientes-lista.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     ClienteFormComponent,
+    ClientesListaComponent,
   ],
   imports: [
     CommonModule,
@@ -32,9 +37,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatButtonModule,
     MatIconModule,
     NgxMaskDirective,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatTooltipModule,
+    MatPaginatorModule
   ],
   providers: [provideNgxMask({})],
-  exports: [ClienteFormComponent]
+  exports: [ClienteFormComponent, ClientesListaComponent]
 })
 export class ClientesModule { }

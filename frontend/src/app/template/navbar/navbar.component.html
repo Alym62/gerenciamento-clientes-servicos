@@ -1,14 +1,41 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span>Logo</span>
-        <span class="example-spacer"></span>
-        <div>
-            <a mat-icon-button color="basic" routerLink="/home">
-                <mat-icon>home</mat-icon>
-            </a>
-            <a mat-icon-button color="basic" routerLink="/cliente-form">
-                <mat-icon>account_circle</mat-icon>
-            </a>
-        </div>
-    </mat-toolbar-row>
+<mat-toolbar>
+  <div class="logo">
+    <a routerLink="/home">
+      <img src="{{ logo }}" alt="logo" />
+    </a>
+  </div>
 </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="'15rem'">
+    <ul>
+      <li>
+        <div class="links" routerLink="/home">
+          <span>Home</span>
+          <a mat-icon-button color="basic">
+            <mat-icon>home</mat-icon>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="links" routerLink="/cliente-form">
+          <span>Cadastrar</span>
+          <a mat-icon-button color="basic" routerLink="/cliente-form">
+            <mat-icon>account_circle</mat-icon>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="links" routerLink="/cliente-lista">
+          <span>Clientes</span>
+          <a mat-icon-button color="basic" routerLink="/cliente-lista">
+            <mat-icon>check_circle</mat-icon>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

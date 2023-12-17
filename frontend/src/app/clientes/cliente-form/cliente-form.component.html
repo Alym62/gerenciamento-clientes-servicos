@@ -1,40 +1,96 @@
 <mat-card-content>
-    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
-        <div class="readonly">
-            <mat-card>
-                <mat-form-field appearance="outline">
-                    <mat-label>ID</mat-label>
-                    <input type="text" matInput disabled [(ngModel)]="cliente.id" name="id">
-                    <mat-hint>ID do cliente</mat-hint>
-                </mat-form-field>
-            </mat-card>
-            <mat-card>
-                <mat-form-field appearance="outline">
-                    <mat-label>Data cadastro</mat-label>
-                    <input type="text" matInput disabled [(ngModel)]="cliente.dataCadastro" name="dataCadastro">
-                    <mat-hint>Data de cadastro do cliente</mat-hint>
-                </mat-form-field>
-            </mat-card>
-        </div>
-        <div class="register">
-            <mat-card>
-                <mat-form-field appearance="outline">
-                    <mat-label>Nome</mat-label>
-                    <input type="text" matInput required [(ngModel)]="cliente.nome" name="nome">
-                    <mat-hint>Nome do cliente</mat-hint>
-                </mat-form-field>
-            </mat-card>
-            <mat-card>
-                <mat-form-field appearance="outline">
-                    <mat-label>CPF</mat-label>
-                    <input inputmode="numeric" mask="000.000.000-00" type="text" matInput required [(ngModel)]="cliente.cpf" name="cpf">
-                    <mat-hint>CPF do cliente</mat-hint>
-                </mat-form-field>
-            </mat-card>
-        </div>
-        <button mat-flat-button color="primary" type="submit" (click)="salvarCliente()">
-            <mat-icon>check_circle</mat-icon>
-            Cadastrar
-        </button>
-    </form>
+  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="readonly">
+      <mat-card>
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input
+            type="text"
+            matInput
+            disabled
+            [(ngModel)]="cliente.id"
+            name="id"
+          />
+          <mat-hint>ID do cliente</mat-hint>
+        </mat-form-field>
+      </mat-card>
+      <mat-card>
+        <mat-form-field appearance="outline">
+          <mat-label>Data cadastro</mat-label>
+          <input
+            type="text"
+            matInput
+            disabled
+            [(ngModel)]="cliente.dataCadastro"
+            name="dataCadastro"
+          />
+          <mat-hint>Data de cadastro do cliente</mat-hint>
+        </mat-form-field>
+      </mat-card>
+    </div>
+    <div class="register">
+      <mat-card>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input
+            type="text"
+            matInput
+            required
+            [(ngModel)]="cliente.nome"
+            name="nome"
+          />
+          <mat-hint>Nome do cliente</mat-hint>
+        </mat-form-field>
+      </mat-card>
+
+      <mat-card>
+        <mat-form-field appearance="outline">
+          <mat-label>CPF</mat-label>
+          <input
+            inputmode="numeric"
+            mask="000.000.000-00"
+            type="text"
+            matInput
+            required
+            [(ngModel)]="cliente.cpf"
+            name="cpf"
+          />
+          <mat-hint>CPF do cliente</mat-hint>
+        </mat-form-field>
+      </mat-card>
+    </div>
+
+    <div class="error-content">
+      <div
+        class="error-card"
+        *ngIf="cliente.nome == '' && clienteForm.submitted"
+      >
+        <mat-card class="error">
+          <p class="title-error">Preencha o campo, por favor!</p>
+        </mat-card>
+      </div>
+      <div
+        class="error-card"
+        *ngIf="cliente.cpf == '' && clienteForm.submitted"
+      >
+        <mat-card class="error">
+          <p class="title-error">Preencha o campo, por favor!</p>
+        </mat-card>
+      </div>
+    </div>
+    <div class="buttons">
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+      >
+        <mat-icon>check_circle</mat-icon>
+        Cadastrar
+      </button>
+      <button mat-flat-button color="primary" (click)="redirecionar()" type="button">
+        <mat-icon>exit_to_app</mat-icon>
+        Voltar
+      </button>
+    </div>
+  </form>
 </mat-card-content>
