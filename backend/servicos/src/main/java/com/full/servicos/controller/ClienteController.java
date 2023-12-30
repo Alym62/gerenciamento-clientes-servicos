@@ -5,6 +5,7 @@ import com.full.servicos.dto.ClientePostDTO;
 import com.full.servicos.dto.ClientePutDTO;
 import com.full.servicos.service.ClienteService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +25,8 @@ public class ClienteController {
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
-    public List<Cliente> listar(Pageable pageable){
-        return clienteService.listar(pageable).getContent();
+    public Page<Cliente> listar(Pageable pageable){
+        return clienteService.listar(pageable);
     }
 
     @GetMapping("/{id}")
@@ -38,8 +39,9 @@ public class ClienteController {
         return new ResponseEntity<>(clienteService.salvar(clientePostDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/atualizar")
-    public ResponseEntity<Void> atualizarCliente(@RequestBody @Valid ClientePutDTO clientePutDTO){
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> atualizarCliente(@PathVariable Long id, @RequestBody @Valid ClientePutDTO clientePutDTO){
+        clientePutDTO.setId(id);
         clienteService.atualizar(clientePutDTO);
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

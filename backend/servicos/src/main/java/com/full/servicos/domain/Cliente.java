@@ -22,11 +22,11 @@ public class Cliente {
     @Column(nullable = false, length = 155)
     private String nome;
 
-    @Column(nullable = false, length = 11)
+    @Column(nullable = false, length = 11, unique = true)
     private String cpf;
 
     @Column(name = "data_cadastro", columnDefinition = "DATE")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
     @PrePersist

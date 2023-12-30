@@ -8,8 +8,9 @@
   width: 200px;
 }
 
-.mat-toolbar {
-  background: linear-gradient(90deg, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);  position: relative;
+mat-toolbar {
+  background: #144072;
+  background: linear-gradient(135deg, #144072, #4262dd);
   height: 5rem;
   z-index: 5;
 }
@@ -26,6 +27,11 @@
 
 mat-sidenav-container {
   height: 100%;
+}
+
+mat-sidenav {
+  background: #144072;
+  background: linear-gradient(135deg, #144072, #4262dd);
 }
 
 ul {
@@ -45,4 +51,14 @@ li {
   align-items: center;
   width: 100%;
   cursor: pointer;
+}
+
+span {
+  text-decoration: underline;
+  font-weight: 800;
+  color: #fff;
+}
+
+mat-icon {
+  color: #fff;
 }

@@ -1,3 +1,7 @@
+<h1>Clientes</h1>
+<div class="line"></div>
+<span>{{ cliente.id ? "Edição" : "Cadastro" }}</span>
+
 <mat-card-content>
   <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="readonly">
@@ -8,6 +12,7 @@
             type="text"
             matInput
             disabled
+            style="color: #000;"
             [(ngModel)]="cliente.id"
             name="id"
           />
@@ -21,6 +26,9 @@
             type="text"
             matInput
             disabled
+            style="color: #000;"
+            mask="d0/M0/0000"
+            [leadZeroDateTime]="true"
             [(ngModel)]="cliente.dataCadastro"
             name="dataCadastro"
           />
@@ -79,15 +87,16 @@
       </div>
     </div>
     <div class="buttons">
+      <button mat-flat-button color="primary" type="submit">
+        <mat-icon>check_circle</mat-icon>
+        {{ cliente.id ? "Edição" : "Cadastro" }}
+      </button>
       <button
         mat-flat-button
         color="primary"
-        type="submit"
+        (click)="redirecionar()"
+        type="button"
       >
-        <mat-icon>check_circle</mat-icon>
-        Cadastrar
-      </button>
-      <button mat-flat-button color="primary" (click)="redirecionar()" type="button">
         <mat-icon>exit_to_app</mat-icon>
         Voltar
       </button>

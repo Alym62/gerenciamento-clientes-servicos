@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from './dto/Clientes';
+import { PageResponse } from './config/IPageConfig';
 
 @Injectable({
   providedIn: 'root',
@@ -11,11 +12,27 @@ export class ClientesService {
 
   constructor(private http: HttpClient) {}
 
-  listarCliente(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(`${this.baseApi}`);
+  listarCliente(page: number, size: number): Observable<PageResponse<Cliente>> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+
+    return this.http.get<PageResponse<Cliente>>(`${this.baseApi}`, { params });
+  }
+
+  buscarPorId(id: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.baseApi}/${id}`);
   }
 
   cadastrarCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(`${this.baseApi}`, cliente);
+  }
+
+  atualizarCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(`${this.baseApi}/${cliente.id}`, cliente);
+  }
+
+  deletarCliente(id: number): Observable<Cliente> {
+    return this.http.delete<Cliente>(`${this.baseApi}/${id}`);
   }
 }

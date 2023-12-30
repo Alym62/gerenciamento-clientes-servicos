@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button';
@@ -18,11 +18,25 @@ import { ClientesListaComponent } from './clientes-lista/clientes-lista.componen
 import { MatTableModule } from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CpfPipe } from '../config/pipes/cpf.pipe';
+
+const FORMATO_DATA = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 @NgModule({
   declarations: [
     ClienteFormComponent,
     ClientesListaComponent,
+    CpfPipe
   ],
   imports: [
     CommonModule,
@@ -42,7 +56,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatTooltipModule,
     MatPaginatorModule
   ],
-  providers: [provideNgxMask({})],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+    {provide: MAT_DATE_FORMATS, useValue: FORMATO_DATA},
+    provideNgxMask()
+  ],
   exports: [ClienteFormComponent, ClientesListaComponent]
 })
 export class ClientesModule { }
