@@ -20,10 +20,10 @@ export class ClienteFormComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, { duration: 2000 });
+    this._snackBar.open(message, action, { duration: 7000 });
   }
 
   redirecionar(): void {

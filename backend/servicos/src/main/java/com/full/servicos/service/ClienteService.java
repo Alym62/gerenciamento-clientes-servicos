@@ -5,22 +5,27 @@ import com.full.servicos.dto.ClientePostDTO;
 import com.full.servicos.dto.ClientePutDTO;
 import com.full.servicos.exception.BadRequestException;
 import com.full.servicos.repository.ClienteRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor
+@Transactional
 public class ClienteService {
     private final ClienteRepository clienteRepository;
 
-    public ClienteService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
-
     public Page<Cliente> listar(Pageable pageable){
         return clienteRepository.findAll(pageable);
+    }
+
+    public List<Cliente> listarParaOServico(){
+        return clienteRepository.findAll();
     }
 
     public Cliente findById(Long id){
@@ -28,7 +33,6 @@ public class ClienteService {
                 .orElseThrow(() -> new BadRequestException("Esse cliente não existe."));
     }
 
-    @Transactional
     public Cliente salvar(ClientePostDTO clientePostDTO){
         if (clienteRepository.existeCpf(clientePostDTO.getCpf())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Esse CPF já existe.");
@@ -41,7 +45,6 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    @Transactional
     public void atualizar(ClientePutDTO clientePutDTO){
         clienteRepository.findById(clientePutDTO.getId())
                 .map(cliente -> {

@@ -10,7 +10,7 @@ import { PageResponse } from './config/IPageConfig';
 export class ClientesService {
   private baseApi: string = 'http://localhost:8080/api/v1/cliente';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   listarCliente(page: number, size: number): Observable<PageResponse<Cliente>> {
     const params = new HttpParams()
@@ -18,6 +18,10 @@ export class ClientesService {
       .set('size', size.toString());
 
     return this.http.get<PageResponse<Cliente>>(`${this.baseApi}`, { params });
+  }
+
+  listarClienteParaOServico(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${this.baseApi}/listar`);
   }
 
   buscarPorId(id: number): Observable<Cliente> {

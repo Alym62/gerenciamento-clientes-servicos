@@ -1,17 +1,22 @@
 package com.full.servicos.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
-@Entity(name = "servicos")
+@Entity
+@Table(name = "servicos")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Servico {
+@Builder
+public class ServicoPrestado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,4 +29,8 @@ public class Servico {
     private Cliente cliente;
 
     private BigDecimal valor;
+
+    @Column(name = "data_servico")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    private LocalDate data;
 }

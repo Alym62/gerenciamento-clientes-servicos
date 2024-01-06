@@ -8,7 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientesService } from './clientes.service';
 import { ClientesModule } from './clientes/clientes.module';
+import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 import { TemplateModule } from './template/template.module';
+import { ServicoPrestadoService } from './servico-prestado.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { TemplateModule } from './template/template.module';
     TemplateModule,
     ClientesModule,
     HttpClientModule,
-    NgxMaskDirective
+    NgxMaskDirective,
+    ServicoPrestadoModule
   ],
-  providers: [ClientesService],
+  providers: [ClientesService, ServicoPrestadoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

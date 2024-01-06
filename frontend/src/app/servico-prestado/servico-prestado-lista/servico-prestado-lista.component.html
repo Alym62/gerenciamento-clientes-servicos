@@ -1,0 +1,60 @@
+<h1>Pesquisa de serviços prestados</h1>
+<div class="line"></div>
+<span>Consulta +</span>
+
+<mat-card-content>
+    <form (submit)="consultar()">
+        <div class="readonly">
+            <mat-form-field appearance="outline">
+                <mat-label>Descrição</mat-label>
+                <input type="text" matInput name="nome" [(ngModel)]="nome" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mês</mat-label>
+                <mat-select [(ngModel)]="mes" name="mes" required>
+                    <mat-option value="">Selecione</mat-option>
+                    <mat-option *ngFor="let mes of meses" [value]="mes">{{mes}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="buttons">
+            <button mat-flat-button color="primary" type="submit">
+                <mat-icon>search</mat-icon>
+                Pesquisar
+            </button>
+            <button mat-flat-button color="primary" type="button" (click)="onNavigate()">
+                <mat-icon>exit_to_app</mat-icon>
+                Voltar
+            </button>
+        </div>
+    </form>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+            <ng-container matColumnDef="cliente">
+                <th mat-header-cell *matHeaderCellDef>Cliente</th>
+                <td mat-cell *matCellDef="let servico">{{ servico.cliente.nome}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="descricao">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Descrição do serviço</th>
+                <td mat-cell *matCellDef="let servico">{{ servico.descricao }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="valor">
+                <th mat-header-cell *matHeaderCellDef>Valor do serviço</th>
+                <td mat-cell *matCellDef="let servico">
+                    {{"R$ " + servico.valor + ",00"}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef>Data - serviço</th>
+                <td mat-cell *matCellDef="let servico">{{ servico.data }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+</mat-card-content>

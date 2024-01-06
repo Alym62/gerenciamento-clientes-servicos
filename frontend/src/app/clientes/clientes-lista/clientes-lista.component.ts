@@ -27,10 +27,10 @@ export class ClientesListaComponent implements OnInit {
   constructor(
     private service: ClientesService,
     private _snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, { duration: 2000 });
+    this._snackBar.open(message, action, { duration: 7000 });
   }
 
   carregarDados(): void {

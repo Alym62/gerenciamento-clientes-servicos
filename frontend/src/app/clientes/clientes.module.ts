@@ -4,21 +4,21 @@ import { CommonModule } from '@angular/common';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import { RouterModule } from '@angular/router';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
-import {MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {NgxMaskDirective, provideNgxMask} from 'ngx-mask'
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ClientesListaComponent } from './clientes-lista/clientes-lista.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { CpfPipe } from '../config/pipes/cpf.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CpfPipe } from '../config/pipes/cpf/cpf.pipe';
 
 const FORMATO_DATA = {
   parse: {
@@ -57,8 +57,8 @@ const FORMATO_DATA = {
     MatPaginatorModule
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-    {provide: MAT_DATE_FORMATS, useValue: FORMATO_DATA},
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: MAT_DATE_FORMATS, useValue: FORMATO_DATA },
     provideNgxMask()
   ],
   exports: [ClienteFormComponent, ClientesListaComponent]

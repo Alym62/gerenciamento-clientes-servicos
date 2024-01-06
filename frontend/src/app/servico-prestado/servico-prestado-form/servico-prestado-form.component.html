@@ -1,0 +1,55 @@
+<h1>Serviços prestados</h1>
+<div class="line"></div>
+<span>Novo +</span>
+
+<mat-card-content>
+    <form (submit)="onSubmit()">
+        <div class="readonly">
+            <mat-card>
+                <mat-form-field>
+                    <mat-label>Clientes</mat-label>
+                    <mat-select [ngModelOptions]="{standalone: true}" [(ngModel)]="servico.idCliente" required>
+                        <mat-option value="">Selecione</mat-option>
+                        <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">{{cliente.nome}}</mat-option>
+                    </mat-select>
+                    <mat-hint>Selecione o cliente para o serviço</mat-hint>
+                </mat-form-field>
+            </mat-card>
+            <mat-card>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descrição</mat-label>
+                    <input type="text" matInput name="descricao" [(ngModel)]="servico.descricao" required />
+                    <mat-hint>Descrição do serviço</mat-hint>
+                </mat-form-field>
+            </mat-card>
+        </div>
+        <div class="register">
+            <mat-card>
+                <mat-form-field appearance="outline">
+                    <mat-label>Valor</mat-label>
+                    <input type="text" matInput required name="valor" [(ngModel)]="servico.valor" required />
+                    <mat-hint>Valor do serviço</mat-hint>
+                </mat-form-field>
+            </mat-card>
+
+            <mat-card>
+                <mat-form-field appearance="outline">
+                    <mat-label>Data - serviço</mat-label>
+                    <input type="text" matInput required mask="d0/M0/0000" [(ngModel)]="servico.data" name="data"
+                        [leadZeroDateTime]="true" required />
+                    <mat-hint>Data para entregar o serviço</mat-hint>
+                </mat-form-field>
+            </mat-card>
+        </div>
+        <div class="buttons">
+            <button mat-flat-button color="primary" type="submit">
+                <mat-icon>check_circle</mat-icon>
+                Cadastrar serviço
+            </button>
+            <button mat-flat-button color="primary" type="button" (click)="onNavigate()">
+                <mat-icon>exit_to_app</mat-icon>
+                Voltar
+            </button>
+        </div>
+    </form>
+</mat-card-content>
