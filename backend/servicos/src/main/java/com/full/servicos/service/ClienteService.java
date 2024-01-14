@@ -3,7 +3,6 @@ package com.full.servicos.service;
 import com.full.servicos.domain.Cliente;
 import com.full.servicos.dto.ClientePostDTO;
 import com.full.servicos.dto.ClientePutDTO;
-import com.full.servicos.exception.BadRequestException;
 import com.full.servicos.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
@@ -30,7 +29,7 @@ public class ClienteService {
 
     public Cliente findById(Long id){
         return clienteRepository.findById(id)
-                .orElseThrow(() -> new BadRequestException("Esse cliente não existe."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 
     public Cliente salvar(ClientePostDTO clientePostDTO){
@@ -51,13 +50,13 @@ public class ClienteService {
                     cliente.setNome(clientePutDTO.getNome());
                     cliente.setCpf(clientePutDTO.getCpf());
                     return clienteRepository.save(cliente);
-                }).orElseThrow(() -> new BadRequestException("Esse cliente não existe."));
+                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 
     public void deletar(Long id){
         clienteRepository.findById(id).map(cliente -> {
             clienteRepository.delete(cliente);
             return Void.TYPE;
-        }).orElseThrow(() -> new BadRequestException("Esse cliente não existe."));
+        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 }

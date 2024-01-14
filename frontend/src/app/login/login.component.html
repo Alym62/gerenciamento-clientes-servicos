@@ -1,0 +1,18 @@
+<div class="main">
+    <mat-card class="form-card">
+        <form #loginForm="ngForm" (submit)="onSubmit()">
+            <div class="inputs">
+                <img src="assets/logo.png" alt="logo" width="200px">
+                <mat-form-field appearance="fill">
+                    <mat-label>Username:</mat-label>
+                    <input matInput [(ngModel)]="username" type="text" name="username" placeholder="Usuário">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password:</mat-label>
+                    <input matInput [(ngModel)]="password" type="text" name="password" placeholder="Senha">
+                </mat-form-field>
+                <button type="submit" mat-button color="primary">Entrar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

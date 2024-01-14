@@ -1,0 +1,24 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.form-card .inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-card {
+    background: #144072;
+    background: linear-gradient(135deg, #144072, #4262dd);
+    width: 30vw;
+    height: 60vh;
+}
+
+button {
+    background-color: #fff;
+}
