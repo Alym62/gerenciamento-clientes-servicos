@@ -3,15 +3,22 @@
         <form #loginForm="ngForm" (submit)="onSubmit()">
             <div class="inputs">
                 <img src="assets/logo.png" alt="logo" width="200px">
+                <mat-card-title>{{cadastrando ? 'Cadastro de novo usuário' : 'Entrar'}}</mat-card-title>
                 <mat-form-field appearance="fill">
                     <mat-label>Username:</mat-label>
-                    <input matInput [(ngModel)]="username" type="text" name="username" placeholder="Usuário">
+                    <input matInput [(ngModel)]="usuario.username" type="text" name="username" placeholder="Usuário">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Password:</mat-label>
-                    <input matInput [(ngModel)]="password" type="text" name="password" placeholder="Senha">
+                    <input matInput [(ngModel)]="usuario.password" type="text" name="password" placeholder="Senha">
                 </mat-form-field>
-                <button type="submit" mat-button color="primary">Entrar</button>
+                <div class="buttons">
+                    <button type="submit" mat-button color="primary">{{cadastrando ? 'Cadastrar' : 'Entrar'}}</button>
+                    <button *ngIf="cadastrando" type="button" mat-button color="primary" (click)="cancelarCadastro()">Cancelar</button>
+                </div>
+                <mat-card-footer *ngIf="cadastrando != true">
+                    <a mat-button (click)="prepararCadastro($event)" href="#"> Não possui usuário? Cadastre-se!</a>
+                </mat-card-footer>
             </div>
         </form>
     </mat-card>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { ClientesService } from 'src/app/clientes.service';
+import { ClientesService } from 'src/app/services/clientes.service';
 import { Cliente } from 'src/app/dto/Clientes';
 import { ServicoPrestado } from 'src/app/dto/ServicoPrestado';
-import { ServicoPrestadoService } from 'src/app/servico-prestado.service';
+import { ServicoPrestadoService } from 'src/app/services/servico-prestado.service';
 
 @Component({
   selector: 'app-servico-prestado-form',
@@ -21,7 +21,7 @@ export class ServicoPrestadoFormComponent implements OnInit {
     private _snackBar: MatSnackBar) { }
 
   onNavigate(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/servico-prestado/lista']);
   }
 
   openSnackBar(message: string, action: string) {

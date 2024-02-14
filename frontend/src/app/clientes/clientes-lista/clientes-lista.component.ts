@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
-import { ClientesService } from 'src/app/clientes.service';
+import { ClientesService } from 'src/app/services/clientes.service';
 import { Cliente } from 'src/app/dto/Clientes';
 
 @Component({

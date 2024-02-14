@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ServicoPrestado } from './dto/ServicoPrestado';
+import { ServicoPrestado } from '../dto/ServicoPrestado';
 import { Observable } from 'rxjs';
-import { ServicoPrestadoBusca } from './dto/ServicoPrestadoBusca';
+import { ServicoPrestadoBusca } from '../dto/ServicoPrestadoBusca';
 
 @Injectable({
   providedIn: 'root'

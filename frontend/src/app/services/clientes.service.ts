@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from './dto/Clientes';
-import { PageResponse } from './config/IPageConfig';
+import { Cliente } from '../dto/Clientes';
+import { PageResponse } from '../config/IPageConfig';
 
 @Injectable({
   providedIn: 'root',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ClientesService } from 'src/app/clientes.service';
+import { ClientesService } from 'src/app/services/clientes.service';
 import { Cliente } from 'src/app/dto/Clientes';
 
 @Component({
@@ -27,7 +27,7 @@ export class ClienteFormComponent implements OnInit {
   }
 
   redirecionar(): void {
-    this.router.navigate(['/cliente-lista']);
+    this.router.navigate(['/clientes/lista']);
   }
 
   onSubmit(): void {
@@ -53,7 +53,7 @@ export class ClienteFormComponent implements OnInit {
         },
         (error) => {
           this.openSnackBar(
-            'O cliente não pode ser criado. Coloque um CPF e nome válido.',
+            `${error.error}`,
             'X'
           );
         }

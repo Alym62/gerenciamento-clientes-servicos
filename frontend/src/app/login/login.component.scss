@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    height: 70vh;
 }
 
 .form-card .inputs{
@@ -21,4 +21,18 @@
 
 button {
     background-color: #fff;
+}
+
+mat-card-footer a {
+    color: #fff;
+}
+
+mat-card-title {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
 }

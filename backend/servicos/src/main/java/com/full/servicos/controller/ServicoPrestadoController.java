@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/servico")
-@CrossOrigin("http://localhost:4200")
 @RequiredArgsConstructor
 public class ServicoPrestadoController {
     private final ServicoPrestadoService servicoPrestadoService;

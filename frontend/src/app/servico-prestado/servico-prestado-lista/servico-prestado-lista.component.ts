@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ServicoPrestadoBusca } from 'src/app/dto/ServicoPrestadoBusca';
-import { ServicoPrestadoService } from 'src/app/servico-prestado.service';
+import { ServicoPrestadoService } from 'src/app/services/servico-prestado.service';
 
 @Component({
   selector: 'app-servico-prestado-lista',
@@ -32,7 +32,7 @@ export class ServicoPrestadoListaComponent {
   }
 
   onNavigate(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/servico-prestado/form']);
   }
 
   consultar(): void {
