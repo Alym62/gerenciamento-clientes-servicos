@@ -1,6 +1,6 @@
 package com.full.servicos.controller;
 
-import com.full.servicos.config.JwtService;
+import com.full.servicos.config.jwt.JwtService;
 import com.full.servicos.domain.Usuario;
 import com.full.servicos.dto.UsuarioDTO;
 import com.full.servicos.service.UsuarioService;
@@ -8,8 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 

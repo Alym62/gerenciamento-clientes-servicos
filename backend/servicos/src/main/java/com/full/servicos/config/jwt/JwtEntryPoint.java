@@ -1,4 +1,4 @@
-package com.full.servicos.config;
+package com.full.servicos.config.jwt;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

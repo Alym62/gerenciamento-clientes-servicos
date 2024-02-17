@@ -1,4 +1,4 @@
-package com.full.servicos.config;
+package com.full.servicos.config.jwt;
 
 import com.full.servicos.service.UsuarioService;
 import jakarta.servlet.FilterChain;

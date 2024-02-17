@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
+import { LayoutComponent } from "../layout/layout.component";
 import { ServicoPrestadoFormComponent } from "./servico-prestado-form/servico-prestado-form.component";
 import { ServicoPrestadoListaComponent } from "./servico-prestado-lista/servico-prestado-lista.component";
-import { LayoutComponent } from "../layout/layout.component";
 
 export const SERVICO_PRESTADO_ROUTE: Routes = [
     {
@@ -21,6 +21,6 @@ export const SERVICO_PRESTADO_ROUTE: Routes = [
                 redirectTo: '/servico-prestado/lista',
                 pathMatch: 'full'
             }
-        ]
+        ],
     },
 ]

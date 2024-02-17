@@ -1,4 +1,4 @@
-package com.full.servicos.config;
+package com.full.servicos.config.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;

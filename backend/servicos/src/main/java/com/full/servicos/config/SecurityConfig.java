@@ -1,5 +1,7 @@
 package com.full.servicos.config;
 
+import com.full.servicos.config.jwt.JwtEntryPoint;
+import com.full.servicos.config.jwt.JwtRequestFilter;
 import com.full.servicos.domain.enums.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
