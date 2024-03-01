@@ -28,6 +28,7 @@ public class AuthController {
         var user = Usuario.builder()
                 .username(usuarioDTO.getUsername())
                 .password(passwordEncoder.encode(usuarioDTO.getPassword()))
+                .roles(usuarioDTO.getRoles())
                 .build();
 
         usuarioService.salvarUsuario(user);

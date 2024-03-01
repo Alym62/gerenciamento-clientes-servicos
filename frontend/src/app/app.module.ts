@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthService } from './services/auth-service.service';
 import { HttpInterceptorInterceptor } from './auth/http-interceptor.interceptor';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpInterceptorInterceptor } from './auth/http-interceptor.interceptor'
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [ClientesService, ServicoPrestadoService, AuthService,    {
     provide: HTTP_INTERCEPTORS,

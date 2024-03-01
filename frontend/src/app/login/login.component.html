@@ -12,9 +12,17 @@
                     <mat-label>Password:</mat-label>
                     <input matInput [(ngModel)]="usuario.password" type="text" name="password" placeholder="Senha">
                 </mat-form-field>
+                <mat-form-field *ngIf="cadastrando == true">
+                    <mat-select [(ngModel)]="usuario.roles">
+                        <mat-option *ngFor="let role of roles" [value]="role">
+                            {{role}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
                 <div class="buttons">
                     <button type="submit" mat-button color="primary">{{cadastrando ? 'Cadastrar' : 'Entrar'}}</button>
-                    <button *ngIf="cadastrando" type="button" mat-button color="primary" (click)="cancelarCadastro()">Cancelar</button>
+                    <button *ngIf="cadastrando" type="button" mat-button color="primary"
+                        (click)="cancelarCadastro()">Cancelar</button>
                 </div>
                 <mat-card-footer *ngIf="cadastrando != true">
                     <a mat-button (click)="prepararCadastro($event)" href="#"> Não possui usuário? Cadastre-se!</a>

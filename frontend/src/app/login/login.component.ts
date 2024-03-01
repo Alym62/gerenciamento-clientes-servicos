@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth-service.service';
-import { Usuario } from '../dto/Usuario';
-import { HttpResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { Usuario } from '../dto/Usuario';
+import { Role } from '../dto/enums/Role.enum';
+import { AuthService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  roles: Role[] = [Role.ADMIN, Role.USER];
   usuario: Usuario = new Usuario();
 
   loginError!: boolean;
@@ -28,7 +29,8 @@ export class LoginComponent {
         .then(() => this.router.navigate(['/home']))
         .catch((error) => {
           this.openSnackBar("Erro ao registrar", "X");
-        })
+        });
+        console.log(this.usuario);
     } else {
       await this.auth.loginUsuario(this.usuario)
         .then((res: any) => {
