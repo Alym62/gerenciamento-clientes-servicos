@@ -2,23 +2,24 @@
     <mat-card class="form-card">
         <form #loginForm="ngForm" (submit)="onSubmit()">
             <div class="inputs">
-                <img src="assets/logo.png" alt="logo" width="200px">
                 <mat-card-title>{{cadastrando ? 'Cadastro de novo usuário' : 'Entrar'}}</mat-card-title>
+                <small>{{cadastrando ? 'Registre-se com um usuário e senha!' : 'Por favor, entre com o seu usuário e senha! '}}</small>
                 <mat-form-field appearance="fill">
-                    <mat-label>Username:</mat-label>
-                    <input matInput [(ngModel)]="usuario.username" type="text" name="username" placeholder="Usuário">
+                    <mat-icon matPrefix>perm_identity</mat-icon>
+                    <input matInput [(ngModel)]="usuario.username" type="text" name="username" placeholder="{{cadastrando ? 'Novo usuário' : 'Digite seu usuário'}}">
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-label>Password:</mat-label>
-                    <input matInput [(ngModel)]="usuario.password" type="text" name="password" placeholder="Senha">
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <input matInput [(ngModel)]="usuario.password" type="password" name="password" placeholder="{{cadastrando ? 'Nova senha' : 'Digite sua senha'}}">
                 </mat-form-field>
-                <mat-form-field *ngIf="cadastrando == true">
-                    <mat-select [(ngModel)]="usuario.roles">
-                        <mat-option *ngFor="let role of roles" [value]="role">
-                            {{role}}
-                        </mat-option>
+                <mat-form-field appearance="fill" *ngIf="cadastrando">
+                    <mat-label>Selecione a Permissão</mat-label>
+                    <mat-select [(ngModel)]="roleSelecionada" placeholder="Escolha a permissão">
+                        <mat-option>Selecione</mat-option>
+                      <mat-option [value]="roleAdmin">Administrador</mat-option>
+                      <mat-option [value]="roleUser">Usuário</mat-option>
                     </mat-select>
-                </mat-form-field>
+                  </mat-form-field>
                 <div class="buttons">
                     <button type="submit" mat-button color="primary">{{cadastrando ? 'Cadastrar' : 'Entrar'}}</button>
                     <button *ngIf="cadastrando" type="button" mat-button color="primary"

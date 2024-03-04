@@ -21,6 +21,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { AuthService } from './services/auth-service.service';
 import { HttpInterceptorInterceptor } from './auth/http-interceptor.interceptor';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatIconModule,
+    MatRadioModule
   ],
   providers: [ClientesService, ServicoPrestadoService, AuthService,    {
     provide: HTTP_INTERCEPTORS,

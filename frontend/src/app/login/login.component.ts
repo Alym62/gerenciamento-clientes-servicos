@@ -11,7 +11,9 @@ import { AuthService } from '../services/auth-service.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  roles: Role[] = [Role.ADMIN, Role.USER];
+  roleAdmin: Role = Role.ADMIN;
+  roleUser: Role = Role.USER;
+  roleSelecionada: Role = this.roleAdmin || this.roleUser;
   usuario: Usuario = new Usuario();
 
   loginError!: boolean;
@@ -25,6 +27,7 @@ export class LoginComponent {
 
   async onSubmit(): Promise<void> {
     if (this.cadastrando === true) {
+      this.usuario.roles = [this.roleSelecionada];
       await this.auth.registrarUsuario(this.usuario)
         .then(() => this.router.navigate(['/home']))
         .catch((error) => {
