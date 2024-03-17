@@ -1,18 +1,20 @@
-.logo {
-  position: relative;
-  top: 1.5rem;
-  right: 2rem;
+.profile {
+  border-radius: 50%;
+  background-color: #fff;
 }
 
-.logo img {
-  width: 200px;
+.profile img {
+  width: 100px;
 }
 
-mat-toolbar {
-  background: #144072;
-  background: linear-gradient(135deg, #144072, #4262dd);
-  height: 5rem;
-  z-index: 5;
+.container-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container-profile span {
+  margin-top: 1rem;
 }
 
 .icons-nav {
@@ -30,35 +32,71 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
-  background: #144072;
-  background: linear-gradient(135deg, #144072, #4262dd);
+  box-shadow: 16px 0px 6px -4px rgba(0,0,0,0.2);  
+  background-color: #3458c6;
+  border-radius: 4px;
+  border-color: #3458c6;
 }
 
 ul {
-  padding: 0;
-  padding-left: 1rem;
+  padding: 1rem;
 }
 
 li {
   list-style: none;
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  justify-content: center;
+  margin-top: 1.325rem;
 }
 
 .links {
   display: flex;
   align-items: center;
+  gap: 1rem;
   width: 100%;
   cursor: pointer;
+  height: 50px;
+  background-color: #3458c6;
+  border-radius: 4px;
+}
+
+.links:hover {
+  background-color: #fff;
+  transition: ease .8s;
+  
+  span {
+    color: #3458c6;
+  }
+
+  mat-icon {
+    color: #3458c6;
+  }
+}
+
+li:hover {
+  .line-left {
+    height: 50px;
+    width: 5px;
+    border-radius: 4px;
+    background-color: #FFF;
+    position: relative;
+    right: 10px;
+  }
 }
 
 span {
-  text-decoration: underline;
-  font-weight: 800;
+  font-weight: 500;
   color: #fff;
+  font-size: 1rem;
 }
 
 mat-icon {
   color: #fff;
+}
+
+.line {
+  height: auto;
+  width: 300px;
+  background-color: #fff;
 }

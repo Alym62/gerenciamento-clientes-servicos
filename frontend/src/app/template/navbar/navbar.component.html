@@ -1,52 +1,66 @@
-<mat-toolbar>
-  <div class="logo">
-    <a routerLink="/home">
-      <img src="{{ logo }}" alt="logo" />
-    </a>
-  </div>
-</mat-toolbar>
-
 <mat-sidenav-container>
   <mat-sidenav opened mode="side" [style.width]="'15rem'">
     <ul>
       <li>
+        <div class="container-profile">
+          <div class="profile">
+            <img src="{{ profile }}" alt="logo" />
+          </div>
+          <span>Nome usuário</span>
+        </div>
+      </li>
+      <li>
+        <div class="line-left"></div>
         <div class="links" routerLink="/home">
-          <span>Home</span>
           <a mat-icon-button color="basic">
             <mat-icon>home</mat-icon>
           </a>
+          <span>Home</span>
         </div>
       </li>
       <li>
+        <div class="line-left"></div>
         <div class="links" routerLink="/clientes/form">
-          <span>Cadastrar</span>
           <a mat-icon-button color="basic" routerLink="/clientes/form">
             <mat-icon>account_circle</mat-icon>
           </a>
+          <span>Cadastrar</span>
         </div>
       </li>
       <li>
+        <div class="line-left"></div>
         <div class="links" routerLink="/clientes">
-          <span>Clientes</span>
           <a mat-icon-button color="basic" routerLink="/clientes">
             <mat-icon>check_circle</mat-icon>
           </a>
+          <span>Clientes</span>
         </div>
       </li>
       <li>
+        <div class="line-left"></div>
         <div class="links" routerLink="/servico-prestado/form">
-          <span>Serviços</span>
           <a mat-icon-button color="basic" routerLink="/servico-prestado/form">
             <mat-icon>attach_money</mat-icon>
           </a>
+          <span>Serviços</span>
         </div>
       </li>
       <li>
+        <div class="line-left"></div>
         <div class="links" routerLink="/servico-prestado/lista">
-          <span>Pesquisar</span>
           <a mat-icon-button color="basic" routerLink="/servico-prestado/lista">
             <mat-icon>search</mat-icon>
           </a>
+          <span>Pesquisar</span>
+        </div>
+      </li>
+      <li>
+        <div class="line-left"></div>
+        <div class="links" (click)="logout()">
+          <a mat-icon-button color="basic">
+            <mat-icon>power_settings_new</mat-icon>
+          </a>
+          <span>Sair</span>
         </div>
       </li>
     </ul>
