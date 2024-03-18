@@ -23,4 +23,8 @@ export class ServicoPrestadoService {
 
     return this.http.get<ServicoPrestadoBusca[]>(`${this.baseApi}`, { params });
   }
+
+  valorUltimoServico(): Observable<number> {
+    return this.http.get<number>(`${this.baseApi}/valor`);
+  }
 }

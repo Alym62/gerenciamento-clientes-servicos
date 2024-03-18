@@ -9,7 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("api/v1/servico")
@@ -23,6 +26,12 @@ public class ServicoPrestadoController {
             @RequestParam(value = "mes", required = false) Integer mes
     ) {
         return servicoPrestadoService.pesquisa("%" + nome + "%", + mes);
+    }
+
+    @GetMapping("/valor")
+    @ResponseStatus(code = OK)
+    public BigDecimal valorDoUltimoServicoPrestado() {
+        return servicoPrestadoService.valorUltimoServico();
     }
 
     @PostMapping

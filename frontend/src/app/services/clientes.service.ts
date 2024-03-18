@@ -28,6 +28,14 @@ export class ClientesService {
     return this.http.get<Cliente>(`${this.baseApi}/${id}`);
   }
 
+  listarTotalDeClientesNoSistema(): Observable<number> {
+    return this.http.get<number>(`${this.baseApi}/todos`);
+  }
+
+  listarMediaMensalDeClientesNoSistema(): Observable<number> {
+    return this.http.get<number>(`${this.baseApi}/media`);
+  }
+
   cadastrarCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(`${this.baseApi}`, cliente);
   }

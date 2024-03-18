@@ -1,28 +1,40 @@
-<h3>Bem-vindo</h3>
+<h1>Bem-vindo</h1>
 
 <main>
     <div class="container-cards">
         <div class="card">
-            <span>Total user</span>
+            <span>Total de usuários no sistema</span>
             <div class="status">
-                <h5>40.000</h5>
+                <h5>{{totalClientes}}</h5>
                 <img src="../../assets/Icon.png" alt="icon">
             </div>
             <div class="icon">
                 <mat-icon> call_missed_outgoing</mat-icon>
-                <small>8.5%</small>
+                <a routerLink="/clientes/form">Vamos registrar mais clientes?</a>
             </div>
         </div>
 
         <div class="card">
-            <span>Total sales</span>
+            <span>Média mensal de clientes no mês</span>
             <div class="status">
-                <h5>324</h5>
+                <h5>{{mediaMensal | number: '1.0-3'}}</h5>
                 <img src="../../assets/Icon.png" alt="icon">
             </div>
             <div class="icon">
                 <mat-icon> call_missed_outgoing</mat-icon>
-                <small>27.5%</small>
+                <a routerLink="#">Quer subir a média de clientes?</a>
+            </div>
+        </div>
+        
+        <div class="card-servico">
+            <span>Último serviço cadastrado</span>
+            <div class="status">
+                <h5>R$ {{valorUltimoServicoPrestado | number: '1.0-3'}}</h5>
+                <img src="../../assets/Icon.png" alt="icon">
+            </div>
+            <div class="icon">
+                <mat-icon> call_missed_outgoing</mat-icon>
+                <a routerLink="/servico-prestado/form">Vamos registrar mais serviços?</a>
             </div>
         </div>
     </div>

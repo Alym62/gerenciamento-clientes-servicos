@@ -7,6 +7,7 @@ import com.full.servicos.repository.ClienteRepository;
 import com.full.servicos.repository.ServicoPrestadoRepository;
 import com.full.servicos.util.BigDecimalConverter;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.NonUniqueResultException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -30,6 +32,14 @@ public class ServicoPrestadoService {
 
     public List<ServicoPrestado> pesquisa(String nome, Integer mes){
         return servicoPrestadoRepository.buscarPorNomeEMes(nome, mes);
+    }
+
+    public BigDecimal valorUltimoServico() {
+        var valores = servicoPrestadoRepository.valorUltimoServico();
+        if (!valores.isEmpty())
+            return valores.get(0);
+        else
+            return BigDecimal.ZERO;
     }
 
     public ServicoPrestado salvar(ServicoPrestadoPostDTO servicoPrestadoPostDTO) {

@@ -33,8 +33,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String token = null;
         String username = null;
 
-        System.out.println(requestToken);
-
         if (requestToken != null && requestToken.startsWith("Bearer ")) {
             token = requestToken.substring(7);
             username = jwtService.extrairUsuario(token);

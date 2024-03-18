@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.http.HttpStatus.*;
+
 @RestController
 @RequestMapping("api/v1/cliente")
 @RequiredArgsConstructor
@@ -21,22 +23,37 @@ public class ClienteController {
     private final ClienteService clienteService;
 
     @GetMapping
-    @ResponseStatus(code = HttpStatus.OK)
+    @ResponseStatus(code = OK)
     public Page<Cliente> listar(Pageable pageable) {
         return clienteService.listar(pageable);
     }
 
     @GetMapping("/listar")
+    @ResponseStatus(code = OK)
     public List<Cliente> listarParaServico() {
         return clienteService.listarParaOServico();
     }
 
+    @GetMapping("/todos")
+    @ResponseStatus(code = OK)
+    public Long listarQtdDeClientesNoSistema() {
+        return clienteService.totalDeClientesRegistrados();
+    }
+
+    @GetMapping("/media")
+    @ResponseStatus(code = OK)
+    public Double mediaMensalDeClientes() {
+        return clienteService.calcularMediaMensalDeClientes();
+    }
+
     @GetMapping("/{id}")
+    @ResponseStatus(code = OK)
     public ResponseEntity<Cliente> buscarPorId(@PathVariable Long id) {
-        return new ResponseEntity<>(clienteService.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(clienteService.findById(id), OK);
     }
 
     @PostMapping
+    @ResponseStatus(code = CREATED)
     public ResponseEntity<Cliente> salvarCliente(@RequestBody @Valid ClientePostDTO clientePostDTO) {
         var clienteSalvo = clienteService.salvar(clientePostDTO);
 
@@ -44,6 +61,7 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
+    @ResponseStatus(code = OK)
     public ResponseEntity<Void> atualizarCliente(@PathVariable Long id, @RequestBody @Valid ClientePutDTO clientePutDTO) {
         clientePutDTO.setId(id);
         clienteService.atualizar(clientePutDTO);
@@ -52,6 +70,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(code = OK)
     public ResponseEntity<Void> deletarCliente(@PathVariable Long id) {
         clienteService.deletar(id);
 

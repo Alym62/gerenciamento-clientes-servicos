@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class ClienteService {
     private final ClienteRepository clienteRepository;
 
@@ -32,6 +32,27 @@ public class ClienteService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 
+    public Long totalDeClientesRegistrados() {
+        return clienteRepository.count();
+    }
+
+    public Double calcularMediaMensalDeClientes() {
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate primeiroDiaDoMesAtual = dataAtual.withDayOfMonth(1);
+        LocalDate ultimoDiaDoMesAtual = dataAtual.withDayOfMonth(dataAtual.lengthOfMonth());
+
+        List<Cliente> clientesNoMes = clienteRepository.findByDataCadastroBetween(primeiroDiaDoMesAtual, ultimoDiaDoMesAtual);
+
+        if (clientesNoMes.isEmpty())
+            return 0.0;
+
+        double totalClientesNoMes = clientesNoMes.size();
+        double totalDiasNoMes = dataAtual.lengthOfMonth();
+
+        return totalClientesNoMes / totalDiasNoMes;
+    }
+
+    @Transactional
     public Cliente salvar(ClientePostDTO clientePostDTO){
         if (clienteRepository.existeCpf(clientePostDTO.getCpf())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Esse CPF já existe.");
@@ -44,6 +65,7 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    @Transactional
     public void atualizar(ClientePutDTO clientePutDTO){
         clienteRepository.findById(clientePutDTO.getId())
                 .map(cliente -> {
@@ -53,6 +75,7 @@ public class ClienteService {
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 
+    @Transactional
     public void deletar(Long id){
         clienteRepository.findById(id).map(cliente -> {
             clienteRepository.delete(cliente);
