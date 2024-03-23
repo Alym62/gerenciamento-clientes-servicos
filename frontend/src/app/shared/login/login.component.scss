@@ -1,0 +1,67 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3458c6;
+    background-image: url('../../../assets/images/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-card .inputs{
+    width: auto;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.inputs mat-form-field {
+    width: 21vw;
+    height: auto;
+}
+
+.inputs mat-form-field input {
+    width: 19vw;
+    height: 1.8vh;
+}
+
+.form-card {
+    background-color: #274FC7;
+    width: 40vw;
+    height: 70vh;
+}
+
+button {
+    width: 10vw;
+    background-color: #fff;
+}
+
+mat-card-footer a {
+    margin-top: 1rem;
+    color: #fff;
+}
+
+mat-card-title {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+small {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+mat-radio-button {
+    margin-left: 1rem;
+    background-color: #fff;
+    color: #fff;
+}

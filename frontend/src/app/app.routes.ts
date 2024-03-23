@@ -1,12 +1,12 @@
 import { Routes } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { LoginComponent } from "./login/login.component";
-import { LayoutComponent } from "./layout/layout.component";
-import { AuthGuard } from "./auth/auth.guard";
-import { ServicoPrestadoFormComponent } from "./servico-prestado/servico-prestado-form/servico-prestado-form.component";
-import { ServicoPrestadoListaComponent } from "./servico-prestado/servico-prestado-lista/servico-prestado-lista.component";
-import { ClienteFormComponent } from "./clientes/cliente-form/cliente-form.component";
-import { ClientesListaComponent } from "./clientes/clientes-lista/clientes-lista.component";
+import { HomeComponent } from "src/app/shared/home/home.component";
+import { LoginComponent } from "src/app/shared/login/login.component";
+import { LayoutComponent } from "src/app/shared/layout/layout.component";
+import { AuthGuard } from "src/app/core/guards/auth.guard";
+import { ServicoPrestadoFormComponent } from "src/app/features/servico-prestado/servico-prestado-form/servico-prestado-form.component";
+import { ServicoPrestadoListaComponent } from "src/app/features/servico-prestado/servico-prestado-lista/servico-prestado-lista.component";
+import { ClienteFormComponent } from "src/app/features/clientes/cliente-form/cliente-form.component";
+import { ClientesListaComponent } from "src/app/features/clientes/clientes-lista/clientes-lista.component";
 
 export const APP_ROUTES: Routes = [
     {

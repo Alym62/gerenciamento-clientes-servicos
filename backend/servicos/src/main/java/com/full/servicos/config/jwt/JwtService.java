@@ -20,14 +20,10 @@ public class JwtService {
     public HashMap<String, Object> gerarToken(Usuario usuario) {
         var algoritmo = gerarAlgorithm();
 
-        var roles = usuario.getAuthorities()
-                .stream().toList();
-
         var token = gerarConstrutorJwt()
                 .withIssuer("udemy")
                 .withSubject(usuario.getUsername())
                 .withExpiresAt(getDataInspiracao())
-                //.withClaim("roles", "ADMIN")
                 .sign(algoritmo);
 
         var response = new HashMap<String, Object>();

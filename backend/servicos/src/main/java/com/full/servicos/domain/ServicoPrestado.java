@@ -28,6 +28,7 @@ public class ServicoPrestado {
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @Column(precision = 10, scale = 2)
     private BigDecimal valor;
 
     @Column(name = "data_servico")
