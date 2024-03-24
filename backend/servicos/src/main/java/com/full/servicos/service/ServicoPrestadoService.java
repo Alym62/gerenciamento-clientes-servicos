@@ -2,12 +2,11 @@ package com.full.servicos.service;
 
 import com.full.servicos.domain.Cliente;
 import com.full.servicos.domain.ServicoPrestado;
-import com.full.servicos.dto.ServicoPrestadoPostDTO;
+import com.full.servicos.dto.requests.ServicoPrestadoPostDTO;
 import com.full.servicos.repository.ClienteRepository;
 import com.full.servicos.repository.ServicoPrestadoRepository;
 import com.full.servicos.util.BigDecimalConverter;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.NonUniqueResultException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;

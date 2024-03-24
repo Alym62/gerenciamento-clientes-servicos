@@ -1,8 +1,8 @@
 package com.full.servicos.controller;
 
 import com.full.servicos.domain.Cliente;
-import com.full.servicos.dto.ClientePostDTO;
-import com.full.servicos.dto.ClientePutDTO;
+import com.full.servicos.dto.requests.ClientePostDTO;
+import com.full.servicos.dto.requests.ClientePutDTO;
 import com.full.servicos.service.ClienteService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

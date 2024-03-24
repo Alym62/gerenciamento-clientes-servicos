@@ -1,7 +1,7 @@
 package com.full.servicos.controller;
 
 import com.full.servicos.domain.ServicoPrestado;
-import com.full.servicos.dto.ServicoPrestadoPostDTO;
+import com.full.servicos.dto.requests.ServicoPrestadoPostDTO;
 import com.full.servicos.service.ServicoPrestadoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

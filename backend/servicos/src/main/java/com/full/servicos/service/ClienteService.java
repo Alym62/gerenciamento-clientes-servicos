@@ -1,8 +1,8 @@
 package com.full.servicos.service;
 
 import com.full.servicos.domain.Cliente;
-import com.full.servicos.dto.ClientePostDTO;
-import com.full.servicos.dto.ClientePutDTO;
+import com.full.servicos.dto.requests.ClientePostDTO;
+import com.full.servicos.dto.requests.ClientePutDTO;
 import com.full.servicos.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;

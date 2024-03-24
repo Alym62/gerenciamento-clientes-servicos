@@ -48,6 +48,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(jwtEntryPoint))
                 .authorizeHttpRequests(authorize -> authorize.requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/file/**").permitAll()
                         .requestMatchers("/api/v1/cliente/**").hasAuthority(Role.ADMIN.toString())
                         .requestMatchers("/api/v1/servico/**").hasAuthority(Role.ADMIN.toString())
                         .anyRequest().authenticated())

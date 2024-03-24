@@ -2,7 +2,7 @@ package com.full.servicos.controller;
 
 import com.full.servicos.config.jwt.JwtService;
 import com.full.servicos.domain.Usuario;
-import com.full.servicos.dto.UsuarioDTO;
+import com.full.servicos.dto.requests.UsuarioDTO;
 import com.full.servicos.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

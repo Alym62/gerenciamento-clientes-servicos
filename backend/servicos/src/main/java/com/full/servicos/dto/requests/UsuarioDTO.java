@@ -1,4 +1,4 @@
-package com.full.servicos.dto;
+package com.full.servicos.dto.requests;
 
 import com.full.servicos.domain.enums.Role;
 import lombok.Builder;

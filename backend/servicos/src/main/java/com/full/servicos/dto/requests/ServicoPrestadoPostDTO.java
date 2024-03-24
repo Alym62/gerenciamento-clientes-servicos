@@ -1,4 +1,4 @@
-package com.full.servicos.dto;
+package com.full.servicos.dto.requests;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
