@@ -25,12 +25,15 @@
                 <a routerLink="#">Quer subir a média de clientes?</a>
             </div>
         </div>
-        
+
         <div class="card-servico">
             <span>Último serviço prestado</span>
             <div class="status">
                 <h5>R$ {{valorUltimoServicoPrestado | number: '1.0-3'}}</h5>
                 <img src="../../../assets/images/Icon.png" alt="icon">
+                <div class="card-image">
+                    <img [src]="imagem" alt="imageDB">
+                </div>
             </div>
             <div class="icon">
                 <mat-icon> call_missed_outgoing</mat-icon>

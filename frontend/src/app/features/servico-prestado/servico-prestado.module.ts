@@ -14,6 +14,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { ServicoPrestadoFormComponent } from './servico-prestado-form/servico-prestado-form.component';
 import { ServicoPrestadoListaComponent } from './servico-prestado-lista/servico-prestado-lista.component';
 import { ServicoPrestadoRoutingModule } from './servico-prestado-routing.module';
+import { FileComponent } from 'src/app/core/components/upload-files/file/file.component';
 
 const FORMATO_DATA = {
   parse: {
@@ -31,6 +32,7 @@ const FORMATO_DATA = {
   declarations: [
     ServicoPrestadoFormComponent,
     ServicoPrestadoListaComponent,
+    FileComponent
   ],
   imports: [
     CommonModule,

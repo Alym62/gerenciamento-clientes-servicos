@@ -41,7 +41,8 @@ h1 {
 
     .icon {
         display: flex;
-        margin-top: 6rem;
+        position: relative;
+        bottom: 2.625rem;
 
         mat-icon {
             color: #00B69B;
@@ -50,17 +51,38 @@ h1 {
 
     .status {
         display: flex;
-        align-items: center;
         gap: 1rem;
 
         img {
             position: relative;
-            top: 1rem;
+            top: 1.625rem;
             width: 60px;
             height: 60px;
         }
+
+        img:nth-last-child(1) {
+            width: 150px;
+            height: 150px;
+        }
+
+        .card-image {
+            width: 11.625rem;
+            height: 11.625rem;
+            border-radius: 2rem;
+            box-shadow: 11px 17px 15px -3px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 13.625rem;
+            bottom: 1rem;
+        }
     }
 }
+
+
 
 .card {
     width: 20rem;

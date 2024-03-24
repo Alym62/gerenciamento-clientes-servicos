@@ -13,8 +13,8 @@ import { TemplateModule } from 'src/app/core/components/template/template.module
 import { ServicoPrestadoService } from 'src/app/core/services/servico-prestado.service';
 import { LoginComponent } from 'src/app/shared/login/login.component';
 import { FormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutComponent } from 'src/app/shared/layout/layout.component';
@@ -22,7 +22,8 @@ import { AuthService } from 'src/app/core/services/auth-service.service';
 import { HttpInterceptorInterceptor } from 'src/app/core/interceptors/http-interceptor.interceptor';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { FileService } from './core/services/file.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatIconModule,
     MatRadioModule
   ],
-  providers: [ClientesService, ServicoPrestadoService, AuthService,    {
+  providers: [ClientesService, ServicoPrestadoService, AuthService, FileService, {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorInterceptor,
     multi: true
