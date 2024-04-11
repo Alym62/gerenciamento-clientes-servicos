@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ServicoPrestado } from 'src/app/shared/models/dto/ServicoPrestado';
 import { Observable } from 'rxjs';
@@ -12,8 +12,16 @@ export class ServicoPrestadoService {
 
   constructor(private http: HttpClient) { }
 
-  salvarServico(servicoPrestado: ServicoPrestado): Observable<ServicoPrestado> {
-    return this.http.post<ServicoPrestado>(`${this.baseApi}`, servicoPrestado);
+  salvarServico(servicoPrestado: ServicoPrestado, file: File): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders()
+    }
+    const formData: FormData = new FormData()
+    formData.append('data', new Blob([JSON.stringify(servicoPrestado)], {
+        type: 'application/json'
+      }))
+    formData.append('file', file)
+    return this.http.post<any>(`${this.baseApi}`, formData, httpOptions);
   }
 
   pesquisarServico(nome: string, mes: number): Observable<ServicoPrestadoBusca[]> {

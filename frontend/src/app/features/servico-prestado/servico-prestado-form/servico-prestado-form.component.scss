@@ -70,3 +70,46 @@ button {
     align-items: center;
     gap: 1rem;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-file-upload {
+    border: 1px solid #3458c6;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #3458c6;
+    color: #fff;
+    margin-bottom: 1rem;
+
+    mat-icon {
+        color: #fff;
+    }
+
+    span {
+        position: relative;
+        bottom: .325rem;
+        left: .325rem;
+    }
+}
+
+.custom-file-upload:hover {
+    background-color: #fff;
+    color: #3458c6;
+    transition: ease .8s;
+
+    mat-icon {
+        color: #3458c6;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}

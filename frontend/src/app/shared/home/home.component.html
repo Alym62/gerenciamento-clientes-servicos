@@ -32,7 +32,7 @@
                 <h5>R$ {{valorUltimoServicoPrestado | number: '1.0-3'}}</h5>
                 <img src="../../../assets/images/Icon.png" alt="icon">
                 <div class="card-image">
-                    <img [src]="imagem" alt="imageDB">
+                    <img [src]="'data:image/png;base64,' + imagem.data" alt="imageDB">
                 </div>
             </div>
             <div class="icon">

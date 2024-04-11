@@ -3,4 +3,5 @@ export class ServicoPrestado {
     valor: string = "";
     data: string = "";
     idCliente: number = 0;
+    file: File = {} as File;
 }

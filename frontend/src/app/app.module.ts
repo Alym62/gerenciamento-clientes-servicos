@@ -23,7 +23,6 @@ import { HttpInterceptorInterceptor } from 'src/app/core/interceptors/http-inter
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
-import { FileService } from './core/services/file.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +48,7 @@ import { FileService } from './core/services/file.service';
     MatIconModule,
     MatRadioModule
   ],
-  providers: [ClientesService, ServicoPrestadoService, AuthService, FileService, {
+  providers: [ClientesService, ServicoPrestadoService, AuthService, {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorInterceptor,
     multi: true

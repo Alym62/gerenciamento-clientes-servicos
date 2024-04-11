@@ -34,4 +34,8 @@ public class ServicoPrestado {
     @Column(name = "data_servico")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate data;
+
+    @OneToOne
+    @JoinColumn(name = "file_id")
+    private FileDB file;
 }

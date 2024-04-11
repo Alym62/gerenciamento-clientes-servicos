@@ -7,7 +7,6 @@ import { ServicoPrestadoFormComponent } from "src/app/features/servico-prestado/
 import { ServicoPrestadoListaComponent } from "src/app/features/servico-prestado/servico-prestado-lista/servico-prestado-lista.component";
 import { ClienteFormComponent } from "src/app/features/clientes/cliente-form/cliente-form.component";
 import { ClientesListaComponent } from "src/app/features/clientes/clientes-lista/clientes-lista.component";
-import { FileComponent } from "./core/components/upload-files/file/file.component";
 
 export const APP_ROUTES: Routes = [
     {
@@ -63,15 +62,6 @@ export const APP_ROUTES: Routes = [
                         pathMatch: 'full'
                     }
                 ],
-            },
-            {
-                path: 'files',
-                children: [
-                    {
-                        path: 'form',
-                        component: FileComponent
-                    }
-                ]
             }
         ],
     }

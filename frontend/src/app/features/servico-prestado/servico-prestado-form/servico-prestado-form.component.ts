@@ -13,7 +13,7 @@ import { ServicoPrestadoService } from 'src/app/core/services/servico-prestado.s
 })
 export class ServicoPrestadoFormComponent implements OnInit {
   clientes: Cliente[] = [];
-
+  file: File = {} as File;
   servico: ServicoPrestado = new ServicoPrestado();
 
   constructor(private clienteService: ClientesService,
@@ -28,9 +28,13 @@ export class ServicoPrestadoFormComponent implements OnInit {
     this._snackBar.open(message, action, { duration: 2000 });
   }
 
+  onFileSelected(event: any): void {
+    this.file = event.target.files[0] as File;
+  }
+
   onSubmit(): void {
     this.servico.data = this.formatarData(this.servico.data);
-    this.servicoService.salvarServico(this.servico).subscribe((secesso) => {
+    this.servicoService.salvarServico(this.servico, this.file).subscribe((sucesso) => {
       this.onNavigate();
       this.openSnackBar("Serviço registrado com sucesso.", "X")
     }, (error) => {
