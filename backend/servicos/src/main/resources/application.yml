@@ -1,11 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/full
-    username: postgres
-    password: postgres
+  profiles:
+    active: test
   jpa:
-    hibernate:
-      ddl-auto: update
+    open-in-view: true
   servlet:
     multipart:
       enabled: true

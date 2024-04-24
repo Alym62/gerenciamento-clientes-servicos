@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -36,12 +36,12 @@ public class ServicoPrestadoService {
         return servicoPrestadoRepository.buscarPorNomeEMes(nome, mes);
     }
 
-    public Object valorUltimoServico() {
+    public Optional<Object> valorUltimoServico() {
         var valor = servicoPrestadoRepository.valorUltimoServico();
         if (valor != null)
-            return valor;
-        else
-            throw new RuntimeException("Algum erro aconteceu ao buscar o ultimo serviço prestado");
+            return Optional.of(valor);
+
+        return Optional.empty();
     }
 
     public ServicoPrestado salvar(ServicoPrestadoPostDTO servicoPrestadoPostDTO, MultipartFile file) {

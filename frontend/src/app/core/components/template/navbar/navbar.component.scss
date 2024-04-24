@@ -1,22 +1,3 @@
-.profile {
-  border-radius: 50%;
-  background-color: #fff;
-}
-
-.profile img {
-  width: 100px;
-}
-
-.container-profile {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.container-profile span {
-  margin-top: 1rem;
-}
-
 .icons-nav {
   position: relative;
   right: 3rem;
@@ -32,10 +13,10 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
-  box-shadow: 16px 0px 6px -4px rgba(0,0,0,0.2);  
-  background-color: #3458c6;
+  box-shadow: 16px 0px 6px -4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(17 24 39);
   border-radius: 4px;
-  border-color: #3458c6;
+  border-color: rgb(17 24 39);
 }
 
 ul {
@@ -57,20 +38,20 @@ li {
   width: 100%;
   cursor: pointer;
   height: 50px;
-  background-color: #3458c6;
+  background-color: rgb(17 24 39);
   border-radius: 4px;
 }
 
 .links:hover {
   background-color: #fff;
   transition: ease .8s;
-  
+
   span {
-    color: #3458c6;
+    color: rgb(17 24 39);
   }
 
   mat-icon {
-    color: #3458c6;
+    color: rgb(17 24 39);
   }
 }
 

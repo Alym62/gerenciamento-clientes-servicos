@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -31,7 +32,7 @@ public class ServicoPrestadoController {
 
     @GetMapping("/valor")
     @ResponseStatus(code = OK)
-    public Object valorDoUltimoServicoPrestado() {
+    public Optional<Object> valorDoUltimoServicoPrestado() {
         return servicoPrestadoService.valorUltimoServico();
     }
 

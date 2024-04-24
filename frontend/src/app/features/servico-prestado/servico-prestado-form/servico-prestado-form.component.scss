@@ -35,10 +35,6 @@ mat-card-content {
     width: 100%;
 }
 
-button {
-    margin-top: 1rem;
-}
-
 .error-content {
     width: 100%;
     display: flex;
@@ -69,6 +65,11 @@ button {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    button {
+        margin-top: 1rem;
+        background: rgb(17 24 39);
+    }
 }
 
 .container {
@@ -77,37 +78,36 @@ button {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-}
 
-.custom-file-upload {
-    border: 1px solid #3458c6;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #3458c6;
-    color: #fff;
-    margin-bottom: 1rem;
-
-    mat-icon {
+    .custom-file-upload {
+        border: 1px solid rgb(17 24 39);
+        display: flex;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: rgb(17 24 39);
         color: #fff;
+
+        mat-icon {
+            color: #fff;
+        }
+
+        span {
+            position: relative;
+            bottom: 10rem;
+        }
     }
 
-    span {
-        position: relative;
-        bottom: .325rem;
-        left: .325rem;
-    }
-}
+    .custom-file-upload:hover {
+        background-color: #fff;
+        color: rgb(17 24 39);
+        transition: ease .8s;
 
-.custom-file-upload:hover {
-    background-color: #fff;
-    color: #3458c6;
-    transition: ease .8s;
-
-    mat-icon {
-        color: #3458c6;
+        mat-icon {
+            color: rgb(17 24 39);
+        }
     }
+
 }
 
 input[type="file"] {

@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
   imagem: any;
 
   constructor(
-    private clienteService: ClientesService, 
+    private clienteService: ClientesService,
     private servicoService: ServicoPrestadoService,
-    ) { }
+  ) { }
 
   carregarTotalClientes(): void {
     this.clienteService.listarTotalDeClientesNoSistema().subscribe((total) => this.totalClientes = total);
@@ -28,8 +28,14 @@ export class HomeComponent implements OnInit {
 
   carregarValorUltimoServico(): void {
     this.servicoService.valorUltimoServico().subscribe((response: any) => {
-      this.valorUltimoServicoPrestado = response[0]
-      this.imagem = response[1]
+      if (response === null) {
+        this.valorUltimoServicoPrestado = 0;
+        this.imagem = '';
+      } else {
+        this.valorUltimoServicoPrestado = response[0]
+        this.imagem = response[1]
+      }
+
     });
   }
 

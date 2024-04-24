@@ -35,10 +35,6 @@ mat-card-content {
   width: 100%;
 }
 
-button {
-  margin-top: 1rem;
-}
-
 .error-content {
   width: 100%;
   display: flex;
@@ -49,11 +45,11 @@ button {
 }
 
 .error-card {
-    width: 50%;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .error-card .error {
@@ -69,4 +65,9 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  button {
+    margin-top: 1rem;
+    background: rgb(17 24 39);
+  }
 }

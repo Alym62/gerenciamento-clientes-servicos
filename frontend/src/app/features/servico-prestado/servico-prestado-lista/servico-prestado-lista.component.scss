@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 span {
@@ -20,13 +21,14 @@ mat-card-content {
     margin-top: 1.625rem;
 }
 
-button {
-    margin-top: .625rem;
-    margin-bottom: 1rem;
-}
-
 .buttons {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    button {
+        margin-top: .625rem;
+        margin-bottom: 1rem;
+        background: rgb(17 24 39);
+    }
 }
