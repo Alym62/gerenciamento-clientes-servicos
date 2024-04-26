@@ -19,4 +19,11 @@ public class ClientePostDTO {
     private String cpf;
 
     private LocalDate dataCadastro;
+
+    public ClientePostDTO(Long id, String nome, String cpf, LocalDate dataCadastro) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataCadastro = dataCadastro;
+    }
 }

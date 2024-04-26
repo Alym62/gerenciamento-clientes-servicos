@@ -29,7 +29,7 @@ public class ClienteService {
 
     public Cliente findById(Long id){
         return clienteRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     public Long totalDeClientesRegistrados() {
