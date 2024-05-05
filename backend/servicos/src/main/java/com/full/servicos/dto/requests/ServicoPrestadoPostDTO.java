@@ -20,4 +20,11 @@ public class ServicoPrestadoPostDTO {
 
     @FutureOrPresent(message = "Coloque a data atual ou uma futura.")
     private LocalDate data;
+
+    public ServicoPrestadoPostDTO(String descricao, Long idCliente, String valor, LocalDate data) {
+        this.descricao = descricao;
+        this.idCliente = idCliente;
+        this.valor = valor;
+        this.data = data;
+    }
 }
