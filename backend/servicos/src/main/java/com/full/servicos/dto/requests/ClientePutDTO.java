@@ -17,4 +17,10 @@ public class ClientePutDTO {
     @CPF(message = "O CPF precisa ser válido.")
     @Min(value = 11, message = "O CPF deve conter apenas 11 números.")
     private String cpf;
+
+    public ClientePutDTO(Long id, String nome, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
 }

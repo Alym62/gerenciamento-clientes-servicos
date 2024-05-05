@@ -29,7 +29,7 @@ public class ClienteService {
 
     public Cliente findById(Long id){
         return clienteRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado."));
     }
 
     public Long totalDeClientesRegistrados() {
@@ -72,7 +72,7 @@ public class ClienteService {
                     cliente.setNome(clientePutDTO.getNome());
                     cliente.setCpf(clientePutDTO.getCpf());
                     return clienteRepository.save(cliente);
-                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
+                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cliente não encontrado."));
     }
 
     @Transactional
@@ -80,6 +80,6 @@ public class ClienteService {
         clienteRepository.findById(id).map(cliente -> {
             clienteRepository.delete(cliente);
             return Void.TYPE;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
+        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cliente não encontrado."));
     }
 }
