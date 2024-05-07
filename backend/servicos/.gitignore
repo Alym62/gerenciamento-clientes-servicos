@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+hs_err_pid17932.log
+replay_pid17932.log
