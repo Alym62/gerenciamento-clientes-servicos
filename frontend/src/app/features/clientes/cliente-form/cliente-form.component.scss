@@ -71,3 +71,22 @@ mat-card-content {
     background: rgb(17 24 39);
   }
 }
+
+@media screen and (max-width: 932px) {
+  mat-card-content {
+    .readonly {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .register {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

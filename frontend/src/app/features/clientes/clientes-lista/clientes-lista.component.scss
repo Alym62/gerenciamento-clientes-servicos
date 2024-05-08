@@ -1,5 +1,25 @@
-.novo a {
-    color: #fff;
-    margin-top: 1rem;
-    background: rgb(17 24 39);
+.novo {
+    display: flex;
+    gap: 1rem;
+
+    a {
+        color: #fff;
+        margin-top: 1rem;
+        background: rgb(17 24 39);
+    }
+}
+
+@media screen and (max-width: 932px) {
+    #tabela {
+        table {
+            #edit {
+                display: none;
+            }
+
+            #delete {
+                display: none;
+            }
+        }
+
+    }
 }

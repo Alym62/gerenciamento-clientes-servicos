@@ -18,7 +18,8 @@
             <span>Média mensal de clientes no mês</span>
             <div class="status">
                 <h5>{{mediaMensal | number: '1.0-3'}}</h5>
-                <img src="../../../assets/images/Icon.png" alt="icon">
+                <img [src]="[mediaMensal > 1 ? '../../../assets/images/Icon.png' : '../../../assets/images/icon-red.png']"
+                    alt="icon">
             </div>
             <div class="icon">
                 <mat-icon> call_missed_outgoing</mat-icon>
@@ -30,7 +31,8 @@
             <span>Último serviço prestado</span>
             <div class="status">
                 <h5>R$ {{valorUltimoServicoPrestado | number: '1.0-3'}}</h5>
-                <img src="../../../assets/images/Icon.png" alt="icon">
+                <img [src]="[valorUltimoServicoPrestado > 5000 ? '../../../assets/images/Icon.png' : '../../../assets/images/icon-red.png']"
+                    alt="icon">
                 <div class="card-image">
                     <img [src]="'data:image/png;base64,' + imagem.data" alt="imageDB">
                 </div>

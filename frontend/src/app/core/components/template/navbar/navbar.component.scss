@@ -81,3 +81,9 @@ mat-icon {
   width: 300px;
   background-color: #fff;
 }
+
+@media screen and (max-width: 932px) {
+  mat-sidenav {
+    display: none;
+  }
+}

@@ -4,7 +4,6 @@ import com.full.servicos.domain.FileDB;
 import com.full.servicos.repository.FileDBRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 

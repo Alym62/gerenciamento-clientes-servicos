@@ -113,3 +113,20 @@ mat-card-content {
 input[type="file"] {
     display: none;
 }
+
+@media screen and (max-width: 932px) {
+    .readonly {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+}

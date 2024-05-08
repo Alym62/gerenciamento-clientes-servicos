@@ -132,3 +132,25 @@ h1 {
         }
     }
 }
+
+@media screen and (max-width: 932px) {
+    .container-cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-servico {
+        width: 20rem;
+        height: 15rem;
+
+        .status {
+            .card-image {
+                display: none;
+            }
+        }
+
+        .icon {
+            margin-top: 9rem;
+        }
+    }
+}

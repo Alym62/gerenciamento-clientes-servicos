@@ -3,13 +3,13 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #3458c6;
+    background-color: #F0FFFF;
     background-image: url('../../../assets/images/BG.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.form-card .inputs{
+.form-card .inputs {
     width: auto;
     height: 70vh;
     display: flex;
@@ -30,7 +30,7 @@
 }
 
 .form-card {
-    background-color: #274FC7;
+    background-color: rgb(17 24 39);
     width: 40vw;
     height: 70vh;
 }
@@ -64,4 +64,30 @@ mat-radio-button {
     margin-left: 1rem;
     background-color: #fff;
     color: #fff;
+}
+
+@media screen and (max-width: 932px) {
+    .form-card {
+        width: 100%;
+
+        .inputs {
+            mat-form-field {
+                width: 70%;
+
+                input {
+                    width: 70%;
+                }
+            }
+
+            .buttons {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    width: 40%;
+                }
+            }
+        }
+    }
 }
