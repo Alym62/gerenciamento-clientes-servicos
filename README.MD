@@ -7,6 +7,54 @@ Esse projeto é acadêmico para fins de estudos, portanto todo o código pode se
 
 Esse projeto conta com as boas práticas do desenvolvimento web com uma arquitetura ***REST***. Abaixo você podera ver toda es estrutura de pastas do back-end e do front-end seguindo as boas práticas. Esse projeto conta com validações de formulários, validações no back-end utilizando o ***Validation*** do Spring entre outras boas práticas.
 
+## Backend
+
+- **src/**
+  - **main/**
+    - **java/com/full/servicos/**
+        - `📂 config`
+        - `📂 controller`
+        - `📂 domain`
+        - `📂 dto`
+        - `📂 exception`
+        - `📂 repository`
+        - `📂 service`
+        - `📂 util`
+        - `ServicosApplication.java`
+    - **resources**
+        - `application.yml`
+        - `application-dev.yml`
+        - `application-prod.yml`
+        - `application-test.yml`
+  - **test/**
+    - **java/com/full/servicos/**
+        - `📂 services`
+        - `ServicosApplicationTests.java`
+
+## Frontend
+
+- **src/**
+  - **app/**
+    - **core/**
+        - `📂 components`
+        - `📂 config`
+        - `📂 guards`
+        - `📂 interceptors`
+        - `📂 pipes`
+        - `📂 services`
+    - **features/**
+        - `📂 clientes`
+        - `📂 servicos-prestados`
+    - **shared/**
+        - `📂 enums`
+        - `📂 home`
+        - `📂 layout`
+        - `📂 login`
+        - `📂 models`
+  - **assets/**
+    - **images/**
+      - (imagens do projeto)
+
 ### Imagens e descrição do projeto
 
 - Aqui temos a parte de cadastro do usuário que vai acessar o sistema, ele pode escolher entre ser um ***ADMIN/USER*** ele pode terá que passar um usuário e senha e com isso ele vai se cadastrar no sistema e ter o acesso.
